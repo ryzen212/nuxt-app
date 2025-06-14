@@ -1,0 +1,20 @@
+.layout-sidebar {
+  position: fixed;
+  padding-left: 2rem;   /* px-8 */
+  padding-right: 2rem;
+  padding-top: 1rem;    /* py-4 */
+  padding-bottom: 1rem;
+  border-radius: 0.125rem; /* rounded-sm */
+  width: 20rem;
+  height: calc(100vh - 8rem);
+  top: 6rem;
+  left: 2rem;
+  user-select: none;
+  background-color: #fff; /* fallback for light mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  .layout-sidebar {
+    background-color: var(--p-surface-900); /* example for dark:bg-surface-900 */
+  }
+}

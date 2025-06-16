@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const links = ref([
     {
@@ -18,11 +18,14 @@ const links = ref([
 
         ]
     }
+
 ]);
+
+
 </script>
 
 <template>
-    <div class="layout-sidebar">
+    <div class="layout-sidebar" >
         <ul class="list-none">
             <template v-for="(link, i) in links" :key="i">
                 <li class="mb-2">

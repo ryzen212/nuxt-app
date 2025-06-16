@@ -1,1 +1,15 @@
-@import './_sidebar.scss'
+@import './_sidebar.scss';
+
+
+
+.layout-wrapper{
+    min-height: 100vh;
+}
+ .layout-wrapper {
+             &.layout-sidebar-inactive {
+                .layout-sidebar {
+                    transform: translateX(-100%);
+                    left: 0;
+                }
+            }
+        }

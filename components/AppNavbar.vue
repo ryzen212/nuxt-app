@@ -1,11 +1,13 @@
 
 <script setup>
 const {  toggleSidebar } = useLayout()
+
+
 </script>
 <template>
     <div class="flex items-center bg-primary-100 h-[4rem] w-full dark:bg-surface-900  px-8">
         <div class="flex items-center flex-1">
-            <Button icon="pi pi-bars" aria-label="Save" variant="text" size="large" @click="toggleSidebar" rounded />
+            <Button icon="pi pi-bars" class="layout-menu-button" aria-label="Save" variant="text" size="large" @click="toggleSidebar" rounded />
             <span class="ms-2 text-2xl">SAM</span>
         </div>
         <div>

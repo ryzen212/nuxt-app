@@ -1,14 +1,14 @@
 <script setup>
-const { layoutState,isSidebarActive } = useLayout();
+const { layoutState, isSidebarActive } = useLayout();
 
 const outsideClickListener = ref(null);
 
 watch(isSidebarActive, (newVal) => {
-    if (newVal) {
-        bindOutsideClickListener();
-    } else {
-        unbindOutsideClickListener();
-    }
+  if (newVal) {
+    bindOutsideClickListener();
+  } else {
+    unbindOutsideClickListener();
+  }
 });
 
 
@@ -27,10 +27,10 @@ function bindOutsideClickListener() {
   }
 }
 function unbindOutsideClickListener() {
-    if (outsideClickListener.value) {
-        document.removeEventListener('click', outsideClickListener);
-        outsideClickListener.value = null;
-    }
+  if (outsideClickListener.value) {
+    document.removeEventListener('click', outsideClickListener);
+    outsideClickListener.value = null;
+  }
 }
 function isOutsideClicked(event) {
   const sidebarEl = document.querySelector('.layout-sidebar');
@@ -53,11 +53,13 @@ const containerClass = computed(() => {
 
 <template>
 
-  <div class="layout-wrapper" :class="containerClass">
+  <div class="layout-wrapper layout-static" :class="containerClass">
     <AppNavbar />
     <AppSidebar />
-    <div class="container">
-      <slot />
+    <div class="layout-main-container">
+      <div class="container">
+        <slot />
+      </div>
     </div>
     <div class="layout-mask animate-fadein"></div>
   </div>

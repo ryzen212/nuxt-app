@@ -1,7 +1,18 @@
 <script setup lang="ts">
+
 definePageMeta({
   layout: 'guest'
 })
+const {login} = useAuth();
+
+const email = ref('');
+const password = ref('');
+const handleLogin = async ()=>{
+  const res = await login(email.value,password.value);
+  console.log(res);
+  
+}
+
 </script>
 
 <template>
@@ -11,13 +22,13 @@ definePageMeta({
       <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">Welcome to System Advisor Model!</div>
       <span class="text-muted-color font-medium">Sign in to continue</span>
     </div>
-    <Form>
+    <Form @submit="handleLogin">
       <div class="flex flex-col gap-2">
         <InputGroup>
           <InputGroupAddon>
             <i class="pi pi-user"></i>
           </InputGroupAddon>
-          <InputText placeholder="Username" />
+          <InputText placeholder="Username" v-model="email"/>
         </InputGroup>
 
         <InputGroup>
@@ -26,13 +37,13 @@ definePageMeta({
           </InputGroupAddon>
           <IconField>
 
-            <InputText placeholder="Keyword Search" />
+            <InputText placeholder="Password" type="text" v-model="password" />
             <InputIcon>
               <i class="pi pi-eye-slash" />
             </InputIcon>
           </IconField>
         </InputGroup>
-        <Button class="mt-4">Sign In</Button>
+        <Button class="mt-4" type="submit">Sign In</Button>
       </div>
     </Form>
   </div>

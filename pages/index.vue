@@ -3,14 +3,15 @@
 definePageMeta({
   layout: 'guest'
 })
-const {login} = useAuth();
 
-const email = ref('');
+ const auth = useAuthStore()
+const {login} = auth;
+
+const userName = ref('');
 const password = ref('');
 const handleLogin = async ()=>{
-  const res = await login(email.value,password.value);
-  console.log(res);
-  
+  const res = await login(userName.value,password.value);
+
 }
 
 </script>
@@ -28,7 +29,7 @@ const handleLogin = async ()=>{
           <InputGroupAddon>
             <i class="pi pi-user"></i>
           </InputGroupAddon>
-          <InputText placeholder="Username" v-model="email"/>
+          <InputText placeholder="Username" v-model="userName"/>
         </InputGroup>
 
         <InputGroup>

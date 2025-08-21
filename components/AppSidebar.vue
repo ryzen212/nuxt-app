@@ -3,9 +3,9 @@ import { ref } from 'vue';
 
 const links = ref([
     {
-        label: "Home",
+        label: "User",
         items: [
-            { label: 'Dashboards', icon: 'pi pi-home', to: '/home' },
+            { label: 'Dashboards', icon: 'pi pi-users', to: '/users' },
             { label: 'Users', icon: 'pi pi-user', to: '/users' }
 
         ]
@@ -13,7 +13,7 @@ const links = ref([
     {
         label: "Home",
         items: [
-            { label: 'Dashboards', icon: 'pi pi-home', to: '/home' },
+            { label: 'Dashboards', icon: 'pi pi-users', to: '/users' },
             { label: 'Users', icon: 'pi pi-user', to: '/users' }
 
         ]

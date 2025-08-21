@@ -10,11 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.11.2",
     "@primeuix/themes": "^1.1.1",
     "@primevue/forms": "^4.3.5",
     "@tailwindcss/vite": "^4.1.8",
     "axios": "^1.11.0",
     "nuxt": "^3.17.5",
+    "pinia": "^3.0.3",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5",
     "tailwindcss": "^4.1.8",

@@ -1,11 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+
 import tailwindcss from "@tailwindcss/vite";
 import Aura from '@primeuix/themes/aura';
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
     modules: [
-        '@primevue/nuxt-module'
+        '@primevue/nuxt-module',
+        '@pinia/nuxt'
     ],
+  imports: {
+    dirs: ['store']
+  },
       primevue: {
      importTheme: { from: '@/themes/mytheme.js' },
          options: {

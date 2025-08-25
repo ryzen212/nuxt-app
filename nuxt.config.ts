@@ -9,8 +9,11 @@ export default defineNuxtConfig({
         '@primevue/nuxt-module',
         '@pinia/nuxt'
     ],
-  imports: {
-    dirs: ['store']
+ imports: {
+    dirs: [
+      'composables',          // default
+      'composables/users',    // 👈 add subfolder
+    ],
   },
       primevue: {
      importTheme: { from: '@/themes/mytheme.js' },

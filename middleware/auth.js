@@ -1,15 +1,15 @@
-import { useAuthStore } from "#imports";
-export default defineNuxtRouteMiddleware(async (to, from) => {
-  const auth = useAuthStore();
+// import { useAuthStore } from "~/stores/useAuthStore";
 
-  try {
-    await auth.fetchUser(); // fetch user info from backend
-  } catch (error) {
-   auth.logout();
-    console.error(error.message);
-  return navigateTo("/");
+export default defineNuxtRouteMiddleware(async () => {
+  const accessToken = useCookie("accessToken");
+  if (!accessToken.value) {
+    return navigateTo("/");
   }
-  if (!auth.accessToken) {
+  const auth = useAuthStore();
+  try {
+    await auth.fetchUser();
+  } catch (error) {
+    auth.logout();
     return navigateTo("/");
   }
 });

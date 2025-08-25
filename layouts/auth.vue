@@ -57,10 +57,9 @@ const containerClass = computed(() => {
     <AppNavbar />
     <AppSidebar />
     <div class="layout-main-container">
-      <div class="container">
-        <slot />
-      </div>
+      <slot />
     </div>
     <div class="layout-mask animate-fadein"></div>
   </div>
+  <Toast />
 </template>

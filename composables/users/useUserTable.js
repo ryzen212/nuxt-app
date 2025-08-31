@@ -1,7 +1,7 @@
 import { ref } from "vue";
 
 import axios from "axios";
-export function useUserTable() {
+
   const data = ref([]);
   const selectedUsers = ref([]); // plural, since it's usually multiple
   const keyword = ref("");
@@ -18,6 +18,8 @@ export function useUserTable() {
     sortOrder: 1,
     search: "",
   });
+
+export function useUserTable() {
 
   async function loadTable() {
     isLoading.value = true;

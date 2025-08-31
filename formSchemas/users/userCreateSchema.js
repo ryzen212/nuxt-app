@@ -29,8 +29,8 @@ const resolver = ({ values }) => {
       length: "Role length must be between 1 and 255.",
     },
     password: {
-      required: "Phone number is required!",
-      length: "Phone number length must be between 1 and 255.",
+      required: "Password is required!",
+      length: "Password length must be between 1 and 255.",
     },
   };
 
